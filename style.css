@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.calculator{
+    margin: 20vh auto;
+    background-color: #bbadad;
+    width: 280px;
+    height: 350px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 0 6px black;
+    transform: scale(1.2);
+}
+
+/*Display to display the input, result from the users */
+#display{
+    width: 100%;
+    background: linear-gradient(#5e5c5cd1,#39424521);
+    /* min-height: 60px; */
+    height: 75px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 2rem;
+    border-radius: 10px;
+    text-align: right;
+    margin: 0px;
+    padding: 25px 10px 2px 2px;
+}
+
+@media only screen and (max-width : 850px){
+  #display-container{
+    padding: 0px;
+  }
+}
+
+.buttons{
+    font-family: sans-serif;
+    height: auto;
+    /* min-height: 48px; */
+    height: 55px;
+    width: 25%;
+    border: 1px solid black;
+    border-top: 0;
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.buttons:hover {
+    background-color: #7b7878;
+    box-shadow: 1.0px 1.0px blue;
+}
+
+/* Button with Value 0 has a bigger width */
+
+.buttons span{
+  margin-left: 2.25rem;
+}
+
+.buttons[data-value = "0"] {
+    width: 50%;
+    border-bottom-left-radius: 10px;
+}
+
+/* Arithmatic Operators have a separate background color  */
+
+.buttons[data-value = "="] {
+    background-color: #9c6a61;
+    border-bottom-right-radius: 10px;
+}
+
+.buttons:nth-child(4n+1) {
+    background-color: #caa279f0;
+}
+
+.buttons:nth-child(4n+1):hover, .buttons[data-value = "="]:hover {
+    background-color: #f5ad66f0;
+}
